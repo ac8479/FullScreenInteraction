@@ -5,3 +5,18 @@ html, body {
 canvas {
   display: block;
 }
+button {
+    border: none;
+    background-color: lightblue;
+    width: 150px;
+    height: 50px;
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    
+}
+button:hover {
+    background-color: lightslategrey;
+    color: white;
+    
+}
