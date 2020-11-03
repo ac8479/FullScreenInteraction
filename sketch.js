@@ -11,7 +11,7 @@ var backgroundB = 235;
 function setup() {
     createCanvas(windowWidth, windowHeight);
     
-    colors = color(0, 0, 0);
+    colors = color(100, 100, 150);
     
     button = createButton('COLOR OF MOUNTAINS');
     button.position(30, 30);
@@ -19,7 +19,7 @@ function setup() {
     button.mousePressed(changeColor);
     
     colorPicker = createColorPicker('#253f6a');
-    colorPicker.position(30, 70);
+    colorPicker.position(240, 60);
     
     myEl = createElement('p1', "12:00");
     
@@ -47,6 +47,14 @@ function draw() {
     fill(colorPicker.color());
     noStroke();
     rect(0, windowHeight/2, windowWidth, windowHeight/2);
+    
+    fill(255);
+    rect(30, 60, 250, 25, 4);
+    
+    fill(0);
+    textSize(20);
+    textFont('Montserrat');
+    text("COLOR OF WATER:", 35, 80);
     
     fill(colors);
     triangle(-20, windowHeight/2, windowWidth/4, windowHeight/3, windowWidth/2, windowHeight/2);
