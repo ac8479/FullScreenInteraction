@@ -2,6 +2,7 @@ let button;
 let colorPicker;
 let myEl;
 let clock = "";
+let colors;
 
 var backgroundR = 135;
 var backgroundG = 206;
@@ -10,18 +11,25 @@ var backgroundB = 235;
 function setup() {
     createCanvas(windowWidth, windowHeight);
     
-    button = createButton('START');
+    colors = color(0, 0, 0);
+    
+    button = createButton('COLOR OF MOUNTAINS');
     button.position(30, 30);
     
+    button.mousePressed(changeColor);
+    
     colorPicker = createColorPicker('#253f6a');
-    colorPicker.position(30, 90);
+    colorPicker.position(30, 70);
     
     myEl = createElement('p1', "12:00");
-    //myEl.html('');
-    
-    
     
 }
+
+function changeColor(){
+    colorSet = [color(100, 100, 150), color(100, 150, 100), color(150, 100, 100)];
+    colors = random(colorSet);
+}
+
 
 function draw() {
     background(backgroundR, backgroundG, backgroundB);
@@ -40,10 +48,15 @@ function draw() {
     noStroke();
     rect(0, windowHeight/2, windowWidth, windowHeight/2);
     
+    fill(colors);
+    triangle(-20, windowHeight/2, windowWidth/4, windowHeight/3, windowWidth/2, windowHeight/2);
+    triangle((windowWidth/2)-20, windowHeight/2, 3*windowWidth/4, windowHeight/3, windowWidth+20, windowHeight/2);
+    
     myEl.position(20, windowHeight/2-90);
     myEl.style('font-size', '90px');
     myEl.style('font-family', 'Montserrat');
     myEl.style('color', 'white');
+    
     
     if (mouseY == 0){
         myEl.html('12:00 am');
