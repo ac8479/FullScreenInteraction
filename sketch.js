@@ -1,4 +1,5 @@
 let button;
+let colorPicker;
 
 var backgroundR = 135;
 var backgroundG = 206;
@@ -8,8 +9,10 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     
     button = createButton('START');
-  
     button.position(30, 30);
+    
+    colorPicker = createColorPicker('#179169');
+    colorPicker.position(30, 100);
     
 }
 
@@ -26,6 +29,9 @@ function draw() {
     ellipseMode(CENTER);
     circle(windowWidth/2, mouseY, 100);
     
+    fill(colorPicker.color());
+    noStroke();
+    rect(0, windowHeight/2, windowWidth, windowHeight/2);
 
 }
 
