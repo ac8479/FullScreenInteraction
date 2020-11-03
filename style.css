@@ -7,7 +7,7 @@ canvas {
 }
 button {
     border: none;
-    background-color: lightblue;
+    background-color: white;
     width: 150px;
     height: 50px;
     font-size: 40px;
@@ -16,7 +16,6 @@ button {
     
 }
 button:hover {
-    background-color: lightslategrey;
-    color: white;
+    background-color: bisque;
     
 }
